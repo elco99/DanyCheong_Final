@@ -41,7 +41,7 @@ public:
         tree->setGeometry(QRect(20, 40, 161, 411));
         reporte = new QTextEdit(report);
         reporte->setObjectName(QStringLiteral("reporte"));
-        reporte->setGeometry(QRect(200, 40, 471, 321));
+        reporte->setGeometry(QRect(200, 40, 471, 311));
         pushButton = new QPushButton(report);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setGeometry(QRect(420, 420, 99, 27));

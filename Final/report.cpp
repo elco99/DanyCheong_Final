@@ -1,5 +1,11 @@
 #include "report.h"
 #include "ui_report.h"
+#include <sstream>
+#include <string>
+
+using std::string;
+using std::stringstream;
+
 
 report::report(vector<transporte*>* lista,vector<viaje>* lista2,QWidget *parent) :
     QDialog(parent),
@@ -32,7 +38,9 @@ void report::AddRoot(QString name){
         }
     }else{
         for(int i=0;i<lista2->size();i++){
-            temp= "Viaje "+ i;
+            stringstream ss;
+            ss<<"Viaje "<< i;
+            temp= QString(ss.str().c_str());
             AddChild(itm,temp);
         }
     }
@@ -58,7 +66,9 @@ void report::on_tree_doubleClicked(const QModelIndex &inde)
     }
 
     for(int i=0;i<lista2->size();i++){
-        temp1= "Viaje "+ i;
+        stringstream ss;
+        ss<<"Viaje "<< i;
+        temp1= QString(ss.str().c_str());
         QModelIndex index = ui->tree->selectionModel()->currentIndex();
         QString tmp = index.data(Qt::DisplayRole).toString();
         if(tmp == temp1){
